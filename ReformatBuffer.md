@@ -1,0 +1,16 @@
+https://www.emacswiki.org/emacs?action=edit;id=ReformatBuffer
+
+
+C-x h C-M-\
+
+ 
+    C-x h runs the command mark-whole-buffer
+    C-M-\ runs the command indent-region
+
+You can also insert something like:
+
+    (defun indent-buffer ()
+      (interactive)
+      (save-excursion
+        (indent-region (point-min) (point-max) nil)))
+    (global-set-key [f12] 'indent-buffer)
